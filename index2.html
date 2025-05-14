@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="mb-4">診断フォーム</h2>
+        <form action="index.html" method="get" class="row">
+            <div class="form-group">
+                <label for="job">一生一つしか食べられないならどれにする？</label>
+                <select class="form-control" id="job" required>
+                    <option value="">選択してください</option>
+                    <option value="1">肉類</option>
+                    <option value="2">魚類</option>
+                    <option value="3">野菜</option>
+                    <option value="4">果物</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="magic">もし魔法が1つ使えたら、どれを選ぶ？</label>
+                <select class="form-control" id="magic" required>
+                    <option value="">選択してください</option>
+                    <option value="1">食べても太らない魔法</option>
+                    <option value="2">記憶力を上げる魔法</option>
+                    <option value="3">けがを治せる魔法</option>
+                    <option value="4">心を強くする魔法</option>
+                    <option value="5">人に嫌われない魔法</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">生まれ変わったら何月何に生まれたい？</label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            <div class="form-group">
+                <label for="time">1日のうちで最も幸せを感じる時間はいつ？</label>
+                <input type="time" class="form-control" id="time">
+            </div>
+            <div class="form-group">
+                <label for="tel">あなたの「ラッキーコール」番号を決めてください！！</label>
+                <input type="tel" class="form-control" id="tel" placeholder="例: 777">
+            </div>
+            <div class="form-group">
+                <label for="number">理想の休日、何時間ごろごろする？</label>
+                <input type="number" class="form-control" id="number" placeholder="例: 1">
+            </div>
+            <button type="submit" class="btn btn-custom mt-3">送信する</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>にじさんじHERO</title>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+
+    
+    <div class="container">
+        <header>
+            <h1>にじさんじHEROS出動！！</h1>
+            <div class="header-buttons">
+                <form action="index2.html" method="get">
+                    <button type="submit" class="btn">フォーム</button>
+                </form>
+                <a href="index.html" class="btn">MagicPetShop</a>
+            </div>
+        </header>
+    </div>
+    
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><iframe src="index3.html#murakumo" width="100%" height="600px" style="border:none;" alt="8"></iframe></div> <!-- クローン -->
+            <div class="slide"><iframe src="index3.html#usami" width="100%" height="600px" style="border:none;" alt="1"></iframe></div>
+            <div class="slide"><iframe src="index3.html#akagi" width="100%" height="600px" style="border:none;" alt="2"></iframe></div>
+            <div class="slide"><iframe src="index3.html#saeki" width="100%" height="600px" style="border:none;" alt="3"></iframe></div>
+            <div class="slide"><iframe src="index3.html#habachi" width="100%" height="600px" style="border:none;" alt="4"></iframe></div>
+            <div class="slide"><iframe src="index3.html#hoshirube" width="100%" height="600px" style="border:none;" alt="5"></iframe></div>
+            <div class="slide"><iframe src="index3.html#koyanagi" width="100%" height="600px" style="border:none;" alt="6"></iframe></div>
+            <div class="slide"><iframe src="index3.html#inami" width="100%" height="600px" style="border:none;" alt="7"></iframe></div>
+            <div class="slide"><iframe src="index3.html#murakumo" width="100%" height="600px" style="border:none;" alt="8"></iframe></div>
+            <div class="slide"><iframe src="index3.html#usami" width="100%" height="600px" style="border:none;" alt="1"></iframe></div> <!-- クローン -->
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <footer>
+
+    </footer>
+
+<script>
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let index = 0; // クローンを考慮して1からスタート
+    const totalSlides = slides.length;
+    const slideWidth = 100;
+
+    slider.style.transform = `translateX(-${index * slideWidth}%)`;
+
+    function updateSlide() {
+        slider.style.transition = "transform 0.5s ease-in-out";
+        slider.style.transform = `translateX(-${index * slideWidth}%)`;
+    }
+
+    function handleTransitionEnd() {
+        if (index === totalSlides - 1) {
+            // 8 → 1 に瞬間移動（右へ）
+            index = 1;
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(-${index * slideWidth}%)`;
+        } else if (index === 0) {
+            // 1 → 8 に瞬間移動（左へ）
+            index = totalSlides - 2;
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(-${index * slideWidth}%)`;
+        }
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (index < totalSlides - 1) {
+            index++;
+            updateSlide();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (index > 0) {
+            index--;
+            updateSlide();
+        }
+    });
+
+    slider.addEventListener('transitionend', handleTransitionEnd);
+</script>
+
+</body>
+</html>

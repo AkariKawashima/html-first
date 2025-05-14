@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>宇佐美リト</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+
+    <div id="characters-container"></div>
+
+    <script>
+        // キャラクター情報
+        const characters = [
+    { id:"usami", name: "宇佐美リト", bg: "img/yellow.png", img1: "img/宇佐美リト等身.webp", img2: "img/宇佐美リト顔.png.webp", desc: "U・S・A・M・I！宇佐美～！！", color: "#FAC31E", url: "https://www.youtube.com/@UsamiRito" },
+    { id:"akagi", name: "赤城ウェン", bg: "img/pink.png", img1: "img/赤城ウェン等身.webp", img2: "img/赤城ウェン顔.png.webp", desc: "せーのが3、4…かんぱ～い！", color: "#FF8D9B", url: "https://www.youtube.com/@AkagiWen" },
+    { id:"saeki", name: "佐伯イッテツ", bg: "img/mint.png", img1: "img/佐伯イッテツ等身.webp", img2: "img/佐伯イッテツ顔.png.webp", desc: "次回の配信も、俺と握手！", color: "#8C4664", url: "https://www.youtube.com/@SaikiIttetsu" },
+    { id:"habachi", name: "緋八マナ", bg: "img/blue.png", img1: "img/緋八マナ等身.webp", img2: "img/緋八マナ顔.png.webp", desc: "どーもー！緋八マナでございます。どうぞよろしゅうお願いいたします～！", color: "#64C8F0", url: "https://www.youtube.com/@HibachiMana" },
+    { id:"hoshirube", name: "星導ショウ", bg: "img/purple.png", img1: "img/星導ショウ等身.webp", img2: "img/星導ショウ顔.png.webp", desc: "ご来店ありがとうございます～", color: "#A58CDC", url: "https://www.youtube.com/@HoshirubeSho" },
+    { id:"koyanagi", name: "小柳ロウ", bg: "img/blue.png", img1: "img/小柳ロウ等身.webp", img2: "img/小柳ロウ顔.png.webp", desc: "暗殺組織「ロウルフ」ドン。「抜刀…！」", color: "#5A5FAA", url: "https://www.youtube.com/@KoyanagiRou" },
+    { id:"inami", name: "伊波ライ", bg: "img/green.png", img1: "img/伊波ライ等身.webp", img2: "img/伊波ライ顔.png.webp", desc: "皆のスーパーヒーロー伊波ライ！", color: "#DCFF50", url: "https://www.youtube.com/@InamiRai" },
+    { id:"murakumo", name: "叢雲カゲツ", bg: "img/black.png", img1: "img/叢雲カゲツ等身.webp", img2: "img/叢雲カゲツ顔.png.webp", desc: "持ちつ持たれつぼくカゲツ！", color: "#6EB487", url: "https://www.youtube.com/@InamiRai" }
+];
+
+// キャラクターをループで追加
+const container = document.getElementById("characters-container");
+characters.forEach(character => {
+    const div = document.createElement("div");
+    div.classList.add("picture");
+    div.id = character.id;
+    div.style.background = `url('${character.bg}') no-repeat center center fixed`;
+    div.style.backgroundSize = "cover";
+    div.style.borderRadius = "30px";
+    div.innerHTML = `
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="title" data-color="${character.color}">${character.name}</div>
+                </div>
+            </div>
+            <img src="${character.img1}" alt="${character.name}" class="character-left img-responsive">
+            <img src="${character.img2}" alt="${character.name} 顔" class="character-right img-responsive">
+            <div class="description">
+                <a href="${character.url}" target="_blank" style="color: ${character.color}; text-decoration: none; font-weight: bold;">
+                    ${character.desc}
+                </a>
+            </div>
+        </div>
+    `;
+    container.appendChild(div);
+});
+    // titleの色を変更
+    document.querySelectorAll('.title').forEach(title => {
+        title.style.color = title.dataset.color;
+    });
+    
+    // URLのハッシュでキャラクターを表示する関数
+    function showCharacter() {
+        document.querySelectorAll('.picture').forEach(div => div.style.display = "none");
+        let hash = location.hash.substring(1);
+        if (hash) {
+            let characterDiv = document.getElementById(hash);
+            if (characterDiv) {
+                characterDiv.style.display = "block";
+            }
+        }
+    }
+    
+    // ページ読み込み時とハッシュ変更時に実行
+    window.addEventListener("load", showCharacter);
+    window.addEventListener("hashchange", showCharacter);
+    </script>
+</body>
+</html>

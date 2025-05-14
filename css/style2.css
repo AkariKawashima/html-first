@@ -1,0 +1,35 @@
+body {
+    background-color: #ffe6f2;
+    text-align: center;
+    background-image: url('夜空カーテン.jpg'); /* 背景画像のパス */
+    background-size: cover; /* 画面いっぱいに広げる */
+    background-position: center; /* 中央配置 */
+    background-attachment: fixed;
+}
+
+.form-container {
+    background: #edabff7b;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+.mb-4{
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: hsl(293, 100%, 94%);
+}
+.btn-custom {
+    background-color: #ff99cc;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.btn-custom:hover {
+    background-color: #ff66a3;
+}

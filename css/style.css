@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Serif+Display:ital@0;1&family=Gravitas+One&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    text-align: center;
+    background-image: url('夜空背景.png'); /* 背景画像のパス */
+    background-size: cover; /* 画面いっぱいに広げる */
+    background-position: center; /* 中央配置 */
+    background-attachment: fixed;
+    padding-bottom: 150px;
+}
+
+header {
+    background-color: #de57eab0;
+    color: #fff;
+    /* position: fixed; */
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    /* z-index: 100; */
+}
+
+header h1 {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.999);
+    margin: 0;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+header span{
+    color: #fef5ff;
+}
+
+.text{
+    margin: 100px auto;
+    padding: 20px;
+    width: 60%; /* ボックスの幅 */
+    border-radius: 20px; /* 角を丸く */
+    position: relative; /* 疑似要素で枠を作るため */
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 30px; /* さらに角を丸く */
+    border: 4px solid rgba(255, 150, 200, 0.8); /* ピンク色の枠線 */
+    box-shadow: 0 0 20px rgba(255, 150, 200, 0.5); /* ふわっと光らせる */
+    z-index: -1; /* 背景として配置 */
+}
+
+
+.text h2{
+    font-size: 25px;
+    font-weight: bold;
+    color: #f4b7f8;
+    padding: 20px;
+}
+
+.text p{
+    color: #fff;
+    font-weight: bold;
+    margin: 10px auto;
+    width: 60%;
+    line-height: 3; /* 行間を広げる（1.8倍） */
+    letter-spacing: 0.1em;/* 文字の間隔を少し広げる（0.1em） */
+}
+
+.select{
+    font-size: large;
+    letter-spacing: 0.5em;
+    margin:200px 50px;
+    font-weight: bold;
+    color: hsl(331, 100%, 92%);
+    text-align: center; /* テキストを中央揃え */
+    background: rgba(255, 192, 203, 0.3); /* ピンク系の半透明背景 */
+    padding: 20px; /* 内側の余白 */
+    border-radius: 20px; /* 角を丸く */
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.8); /* 周囲をぼやけさせる */
+    display: inline-block; /* テキストの幅に合わせる */
+}
+
+.image-container img {
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease-in-out;
+}
+.image-container img:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    /* background: white; */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 400px; /* 最大幅を指定 */
+    margin: 0 auto; /* 中央に配置 */
+    background-color: #ffffff00; /* モーダル背景色 */
+}
+#modalTitle {
+    font-size: 1.5rem; /* タイトルのフォントサイズ */
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    word-wrap: break-word; /* 長いタイトルを折り返す */
+}
+
+#modalText {
+    color: #ffffff;
+    font-size: 1rem;
+    word-wrap: break-word; /* 説明文が長くても折り返す */
+    max-width: 100%; /* 最大幅を100%に */
+    margin-top: 10px;
+}
+.modal img {
+    width:200px;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}

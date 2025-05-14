@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Pet Shop</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+        <h1><span>M</span>agical <span>P</span>et <span>S</span>hop</h1>
+    </header>
+    
+    <div class="container">
+        <div>
+            <div class="text">
+                <h2>ようこそ、魔獣の世界へ！</h2>
+                <p>あなたの新しい友達を探す場所、それがここ「魔獣ペットショップ」です。
+                    私たちのサイトでは、幻想的で個性的な魔獣たちをペットとして迎え入れることができます。これらの魔獣は、どこか神秘的で魅力的な存在。あなたにぴったりの魔獣を選ぶために、少しだけ心を開いてみてください。
+                </p>
+            </div>
+            <div class="text">
+                <h2>なぜ魔獣をペットにするのか？</h2>
+                <p>魔獣は、普通のペットとは違ったユニークな特性を持っています。それぞれの魔獣は特別な力を持ち、あなたの生活に色鮮やかな彩りを加えてくれるでしょう。例えば、あなたを守ってくれる勇敢な魔獣や、癒しの力でストレスを和らげてくれる魔獣もいます。彼らはただのペットではなく、あなたの冒険のパートナーでもあるのです。</p>
+            </div>
+            <div class="text">
+                <h2>あなたにぴったりの魔獣を選ぶ方法</h2>
+                <p>このサイトでは、あなたの個性やライフスタイルに合わせて魔獣を選ぶことができます。各魔獣の詳細ページでは、見た目だけでなく、性格や得意なこと、飼うための注意点なども紹介しています。また、他の飼い主たちの体験談も参考にできるので、魔獣との生活がどんなものになるのか、想像しやすくなります。</p>
+            </div>
+            <div class="text">
+                <h2>魔獣と共に成長する</h2>
+                <p>魔獣との生活は、ただ可愛いだけではありません。日々の手入れや特訓、冒険を通じて、魔獣と一緒に成長する楽しさが待っています。時にはトラブルが発生することもありますが、それもまた魔獣との絆を深める大切な経験です。</p>
+            </div>
+            <div class="text">
+                <h2>さあ、あなたの魔獣を見つけて、特別な生活を始めましょう！</h2>
+                <p>ページを進んで、たくさんの魔獣たちと出会ってください。きっとあなたにぴったりの魔獣が待っていますよ。</p>
+            </div>
+        </div>
+        <div class="select">
+            <h2>＊好きな宝石を1つ選んでください＊</h2>
+        </div>
+    </div>
+    
+    <!-- <div class="select"> -->
+        <div class="image-container">
+            <img src="img/ドロップシャドウVer_【無料立ち絵素材】マスコット04_青色.png" alt="画像1" onclick="showModal(0)">
+            <img src="img/ドロップシャドウVer_【無料立ち絵素材】マスコット04_黄色.png" alt="画像2" onclick="showModal(1)">
+            <img src="img/ドロップシャドウVer_【無料立ち絵素材】マスコット04_紫色.png" alt="画像3" onclick="showModal(2)">
+        </div>
+        
+        <div class="overlay" id="overlay" onclick="hideModal()">
+            <div class="modal" onclick="event.stopPropagation();">
+                <span class="close" onclick="hideModal()">&times;</span>
+                <h3 id="modalTitle"></h3> <!-- ここでタイトル（画像の名前）を表示 -->
+                <img id="modalImage" src=" ">
+                <p id="modalText"></p> <!-- 説明文 -->
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <script>
+        const images = [
+            { src: "img/ドロップシャドウVer_【無料立ち絵素材】マスコット01_笑顔.png", title: "シルフィ（Sylphy）", text: "シルフィは、風とともに生きる魔獣で、優れた感覚を持っている。非常に知的で落ち着いており、物事を冷静に判断できる賢い性格。自分から積極的に人に近づくことは少ないが、一度心を開くと、飼い主に対しては忠実で穏やかな存在になる。感受性が強く、周囲の変化を敏感に感じ取るので、飼い主の気持ちを読み取っては慰めてくれることもしばしば。" },
+            { src: "img/ドロップシャドウVer_【無料立ち絵素材】マスコット02_笑顔.png", title: "コロン（Colon）", text: "コロンは、穏やかな性格で、いつもニコニコしているハムスター。ちょっとポンコツなところがあり、たまに歩きながらコケたり、食べ物を落として慌てたりするが、それがまた可愛らしい。少しマイペースで、飼い主に甘えたがりだけど、ちょっとドジなところがまた憎めない。怒ったりすることはほとんどなく、常にニコニコしている癒し系。" },
+            { src: "img/ドロップシャドウVer_【無料立ち絵素材】マスコット03_むかつき.png", title: "ピンキー（Pinky）", text: "ピンキーは、ピンク色の毛並みが美しいウサギで、華やかな外見に反してちょっぴり気難しい性格。何事にもマイペースで、少しでも自分の思い通りにならないと、すぐに不機嫌になってしまう。ぶりっ子な仕草で飼い主の気を引こうとするが、上手くいかないとすぐに不満顔に。特に甘いものが大好きで、甘いおやつをもらうと急に機嫌が良くなったり、さっきまでの不機嫌さを忘れて尻尾をフリフリしながら甘えてくる。" },
+        ];
+
+        function showModal(index) {
+            document.getElementById("modalImage").src = images[index].src;
+            document.getElementById("modalTitle").innerText = images[index].title; // タイトルを表示
+            document.getElementById("modalText").innerText = images[index].text;
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function hideModal() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
